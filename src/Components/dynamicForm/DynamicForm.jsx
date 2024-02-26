@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const formFields = {
   name: {
     type: "text",
@@ -16,25 +18,56 @@ const formFields = {
   },
 };
 
-const mapObjToArray = (obj) => {
-  return Object.keys(obj).map((key) => ({ name: key, ...formFields[key] }));
+const transformData = (obj) => {
+  return Object.keys(obj).reduce((acc, cur) => {
+    acc[cur] = {
+      ...obj[cur],
+      value: "",
+    };
+
+    return acc;
+  }, {});
 };
 
+const mapObjToArray = (obj) => {
+  return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
+};
+
+//components starts from here
 const DynamicForm = () => {
-  const data = mapObjToArray(formFields);
+  const [formState, setFormState] = useState(transformData(formFields));
+  const data = mapObjToArray(formState);
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+
+      [e.target.name]: {
+        ...formState[e.target.name],
+        value: e.target.value,
+      },
+    });
+    console.log(formState);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
       <h2>Dynamic Form</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         {data.map((item, key) => {
           return (
             <div key={key}>
-              <label htmlFor="">{item.label}</label>
+              <label>{item.label}</label>
               <input
                 type={item.type}
                 name={item.name}
                 placeholder={item.placeholder}
+                value={item.value}
+                onChange={handleChange}
               />
             </div>
           );
