@@ -31,7 +31,7 @@ const App3 = () => {
       id: getId.next().value,
       inputs: inputState,
       res,
-      createdAt: new Date().toLocaleDateString(),
+      createdAt: new Date(),
       operator,
     };
 
@@ -42,6 +42,11 @@ const App3 = () => {
   const handleClearOps = () => {
     setInputState({ ...initialState });
     setResult(0);
+  };
+
+  const handleHistory = (his) => {
+    setInputState({ ...his.inputs });
+    setResult(his.res);
   };
 
   return (
@@ -92,12 +97,22 @@ const App3 = () => {
                 <ul key={item.id}>
                   <li>
                     <p>
-                      operation: {item.inputs.a} {item.operator} {item.inputs.b}
-                      , Result:{item.res}
+                      Operation: {item.inputs.a} {item.operator} {item.inputs.b}
+                      , Result:
+                      {item.res}
                     </p>
-                    <span>{item.createdAt}</span>
+                    <span>
+                      {item.createdAt.toLocaleDateString()}
+                      {"::"}
+                      {item.createdAt.toLocaleTimeString()}
+                    </span>
                     <br />
-                    <button>Reset</button>
+                    <button
+                      className={style.btn}
+                      onClick={() => handleHistory(item)}
+                    >
+                      Reset
+                    </button>
                   </li>
                 </ul>
               );
