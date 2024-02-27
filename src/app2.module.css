@@ -1,0 +1,5 @@
+.cardGroups {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gird-gap: 8px;
+}

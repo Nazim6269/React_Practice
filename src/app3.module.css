@@ -1,0 +1,24 @@
+.card {
+  background-color: #abc9;
+  width: 30rem;
+  padding: 5px 9px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+}
+
+.btn {
+  padding: 6px 18px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 5px;
+}

@@ -77,3 +77,116 @@ const childMap = [
     children: [5, 6],
   },
 ];
+
+export const tasks = [
+  {
+    id: "12",
+    createdAt: "2024-02-27T18:04:42.792Z",
+    subtitle: "your tasks",
+    tags: [
+      { id: "tags_01", text: "it is done", icon: "D" },
+      { id: "tags_02", text: "it is cancel", icon: "C" },
+      { id: "tags_03", text: "it is Progressing", icon: "P" },
+      { id: "tags_04", text: "it is not started", icon: "N" },
+    ],
+    comments: [
+      {
+        id: "commentt_01",
+        user: {
+          id: "user_01",
+          avatar: "pqr.com",
+          name: "nazim",
+        },
+        text: "lorem ipsum dollor...",
+      },
+    ],
+  },
+  {
+    id: "12",
+    createdAt: "2024-02-27T18:04:42.792Z",
+    subtitle: "your tasks",
+    tags: [
+      { id: "tags_01", text: "it is done", icon: "D" },
+      { id: "tags_02", text: "it is cancel", icon: "C" },
+      { id: "tags_03", text: "it is Progressing", icon: "P" },
+      { id: "tags_04", text: "it is not started", icon: "N" },
+    ],
+    comments: [
+      {
+        id: "commentt_01",
+        user: {
+          id: "user_01",
+          avatar: "pqr.com",
+          name: "nazim",
+        },
+        text: "lorem ipsum dollor...",
+      },
+    ],
+  },
+  {
+    id: "12",
+    createdAt: "2024-02-27T18:04:42.792Z",
+    subtitle: "your tasks",
+    tags: [
+      { id: "tags_01", text: "it is done", icon: "D" },
+      { id: "tags_02", text: "it is cancel", icon: "C" },
+      { id: "tags_03", text: "it is Progressing", icon: "P" },
+      { id: "tags_04", text: "it is not started", icon: "N" },
+    ],
+    comments: [
+      {
+        id: "commentt_01",
+        user: {
+          id: "user_01",
+          avatar: "pqr.com",
+          name: "nazim",
+        },
+        text: "lorem ipsum dollor...",
+      },
+    ],
+  },
+  {
+    id: "12",
+    createdAt: "2024-02-27T18:04:42.792Z",
+    subtitle: "your tasks",
+    tags: [
+      { id: "tags_01", text: "it is done", icon: "D" },
+      { id: "tags_02", text: "it is cancel", icon: "C" },
+      { id: "tags_03", text: "it is Progressing", icon: "P" },
+      { id: "tags_04", text: "it is not started", icon: "N" },
+    ],
+    comments: [
+      {
+        id: "commentt_01",
+        user: {
+          id: "user_01",
+          avatar: "pqr.com",
+          name: "nazim",
+        },
+        text: "lorem ipsum dollor...",
+      },
+    ],
+  },
+  {
+    id: "12",
+    createdAt: "2024-02-27T18:04:42.792Z",
+    subtitle: "your tasks",
+    tags: [
+      { id: "tags_01", text: "it is done", icon: "D" },
+      { id: "tags_02", text: "it is cancel", icon: "C" },
+      { id: "tags_03", text: "it is Progressing", icon: "P" },
+      { id: "tags_04", text: "it is not started", icon: "N" },
+    ],
+    comments: [
+      {
+        id: "commentt_01",
+        user: {
+          id: "user_01",
+          avatar: "pqr.com",
+          name: "nazim",
+        },
+        text: "lorem ipsum dollor...",
+      },
+    ],
+  },
+];
