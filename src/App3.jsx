@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./app3.module.css";
+import { generateId } from "./utils/generateId";
 import { operationTwo } from "./utils/operation";
 
 //initial state
@@ -8,9 +9,12 @@ const initialState = {
   b: 0,
 };
 
+const getId = generateId(); // generator function must be called once
+
 const App3 = () => {
   const [inputState, setInputState] = useState({ ...initialState });
   const [result, setResult] = useState(0);
+  const [histories, setHistories] = useState([]);
 
   const handleInputChange = (e) => {
     setInputState({
@@ -20,7 +24,18 @@ const App3 = () => {
   };
 
   const handleClick = (operator) => {
-    setResult(operationTwo(inputState, operator));
+    const res = operationTwo(inputState, operator);
+    setResult(res);
+
+    const history = {
+      id: getId.next().value,
+      inputs: inputState,
+      res,
+      createdAt: new Date().toLocaleDateString(),
+      operator,
+    };
+
+    setHistories([history, ...histories]);
     setInputState({ ...initialState });
   };
 
@@ -69,7 +84,25 @@ const App3 = () => {
         </div>
         <div>
           <h2>History</h2>
-          <p>There is no history</p>
+          {histories.length === 0 ? (
+            <p>There is no history</p>
+          ) : (
+            histories.map((item) => {
+              return (
+                <ul key={item.id}>
+                  <li>
+                    <p>
+                      operation: {item.inputs.a} {item.operator} {item.inputs.b}
+                      , Result:{item.res}
+                    </p>
+                    <span>{item.createdAt}</span>
+                    <br />
+                    <button>Reset</button>
+                  </li>
+                </ul>
+              );
+            })
+          )}
         </div>
       </div>
     </div>
