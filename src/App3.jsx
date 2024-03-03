@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import InputSection from "./Components/inputSection/InputSection";
+import OperationSection from "./Components/operationSection/OperationSection";
 import style from "./app3.module.css";
 import { generateId } from "./utils/generateId";
 import { operationTwo } from "./utils/operation";
@@ -53,72 +55,19 @@ const App3 = () => {
     <div className={style.card}>
       <h1 className={style.heading}>Calculator</h1>
       <h2>Result: {result}</h2>
+
+      {/* input section */}
+      <InputSection
+        inputState={inputState}
+        handleInputChange={handleInputChange}
+      />
       <div>
-        <h3>Enter inputs: </h3>
-        <input
-          type="number"
-          name="a"
-          value={inputState.a}
-          onChange={handleInputChange}
+        {/* {operation section} */}
+        <OperationSection
+          handleClearOps={handleClearOps}
+          handleClick={handleClick}
+          style={style}
         />
-        <input
-          type="number"
-          name="b"
-          value={inputState.b}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <h3>Choose operation</h3>
-        <div className={style.btnGroup}>
-          <button className={style.btn} onClick={() => handleClick("+")}>
-            +
-          </button>
-          <button className={style.btn} onClick={() => handleClick("-")}>
-            -
-          </button>
-          <button className={style.btn} onClick={() => handleClick("*")}>
-            *
-          </button>
-          <button className={style.btn} onClick={() => handleClick("/")}>
-            /
-          </button>
-          <button className={style.btn} onClick={handleClearOps}>
-            Clear
-          </button>
-        </div>
-        <div>
-          <h2>History</h2>
-          {histories.length === 0 ? (
-            <p>There is no history</p>
-          ) : (
-            histories.map((item) => {
-              return (
-                <ul key={item.id}>
-                  <li>
-                    <p>
-                      Operation: {item.inputs.a} {item.operator} {item.inputs.b}
-                      , Result:
-                      {item.res}
-                    </p>
-                    <span>
-                      {item.createdAt.toLocaleDateString()}
-                      {"::"}
-                      {item.createdAt.toLocaleTimeString()}
-                    </span>
-                    <br />
-                    <button
-                      className={style.btn}
-                      onClick={() => handleHistory(item)}
-                    >
-                      Reset
-                    </button>
-                  </li>
-                </ul>
-              );
-            })
-          )}
-        </div>
       </div>
     </div>
   );
