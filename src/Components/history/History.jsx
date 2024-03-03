@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const History = ({ item, style, handleHistory }) => {
+  console.log("item", item);
   return (
     <div>
       <h2>History</h2>

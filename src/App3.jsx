@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HistorySection from "./Components/history/HistorySection";
 import InputSection from "./Components/inputSection/InputSection";
 import OperationSection from "./Components/operationSection/OperationSection";
 import style from "./app3.module.css";
@@ -69,6 +70,11 @@ const App3 = () => {
           style={style}
         />
       </div>
+      <HistorySection
+        histories={histories}
+        style={style}
+        handleHistory={handleHistory}
+      />
     </div>
   );
 };
