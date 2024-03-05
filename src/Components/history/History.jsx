@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const History = ({ item, style, handleHistory }) => {
-  console.log("item", item);
   return (
     <div>
       <ul key={item.id}>
@@ -17,6 +16,7 @@ const History = ({ item, style, handleHistory }) => {
             {item.createdAt.toLocaleTimeString()}
           </span>
           <br />
+
           <button className={style.btn} onClick={() => handleHistory(item)}>
             Reset
           </button>

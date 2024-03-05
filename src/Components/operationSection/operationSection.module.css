@@ -1,0 +1,9 @@
+.operationSection {
+  background-color: #1a202b;
+  padding: 8px 10px;
+}
+
+.operationSection h2 {
+  color: #fff;
+  text-align: center;
+}

@@ -1,8 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
+import numberFeildStyle from "./numberField.module.css";
 
 const NumberField = ({ name, onChange, value }) => {
-  return <input type="text" name={name} onChange={onChange} value={value} />;
+  return (
+    <input
+      type="text"
+      className={numberFeildStyle.numberField}
+      name={name}
+      onChange={onChange}
+      value={value}
+    />
+  );
 };
 
 NumberField.propTypes = {

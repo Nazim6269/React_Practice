@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
+import inputStyle from "../inputSection/input.module.css";
 import NumberField from "../ui/NumberField";
 
 const InputSection = ({ inputState, handleInputChange }) => {
   return (
-    <div>
-      <h3>Enter inputs: </h3>
+    <div className={inputStyle.inputSection}>
+      <h2>Enter inputs: </h2>
       <NumberField
         type="number"
         name="a"

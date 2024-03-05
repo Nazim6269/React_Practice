@@ -1,0 +1,14 @@
+.historySection {
+  background-color: #1a202b;
+  padding: 8px 10px;
+}
+.historySection h2 {
+  text-align: center;
+}
+
+.historySection h2,
+p,
+ul,
+li {
+  color: #fff;
+}

@@ -1,16 +1,7 @@
 .card {
-  background-color: #abc9;
   width: 30rem;
-  padding: 5px 14px;
   border-radius: 8px;
   margin: 0 auto;
-}
-
-.card input {
-  outline: none;
-  border: none;
-  padding: 8px 5px;
-  margin: 0 4px 0 0;
 }
 
 .heading {
@@ -20,13 +11,15 @@
 .btn {
   padding: 6px 18px;
   border: none;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
   border-radius: 4px;
+  background-color: #225f5f;
+  color: #6e9ba0;
 }
 
 .btnGroup {
   display: flex;
-
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
 }

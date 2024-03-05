@@ -1,0 +1,9 @@
+.numberField {
+  outline: none;
+  border: none;
+  padding: 8px 5px;
+  margin: 0 4px 0 0;
+  background-color: #225f5f;
+  color: #6e9ba0;
+  font-size: 15px;
+}

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { generateId } from "../../utils/generateId";
 import CustomButton from "../ui/CustomButton";
+import operationStyle from "./operationSection.module.css";
 
 const getId = generateId();
 
@@ -39,13 +40,13 @@ const OperationSection = ({ handleClearOps, handleClick, style }) => {
     },
     {
       id: getId.next().value,
-      text: "clear",
+      text: "Clear",
       onClick: handleClearOps,
     },
   ];
   return (
-    <div>
-      <h3>Choose operation</h3>
+    <div className={operationStyle.operationSection}>
+      <h2>Choose operation</h2>
       <div className={style.btnGroup}>
         {operations.map((item) => (
           <CustomButton
