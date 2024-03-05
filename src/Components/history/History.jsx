@@ -5,8 +5,6 @@ const History = ({ item, style, handleHistory }) => {
   console.log("item", item);
   return (
     <div>
-      <h2>History</h2>
-      return (
       <ul key={item.id}>
         <li>
           <p>
@@ -24,22 +22,22 @@ const History = ({ item, style, handleHistory }) => {
           </button>
         </li>
       </ul>
-      );
     </div>
   );
 };
 
+// Define PropTypes for History component
 History.propTypes = {
-  item: PropTypes.arrayOf({
-    id: PropTypes.number,
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     inputs: PropTypes.shape({
       a: PropTypes.number.isRequired,
       b: PropTypes.number.isRequired,
-    }),
+    }).isRequired,
     res: PropTypes.number.isRequired,
-    createdAt: PropTypes.object.isRequired,
-    operator: PropTypes.number.isRequired,
-  }),
+    createdAt: PropTypes.instanceOf(Date).isRequired,
+    operator: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 History.defaultProps = {
