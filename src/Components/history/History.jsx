@@ -1,25 +1,45 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
+import appStyle from "../../app3.module.css";
+import CustomButton from "../ui/CustomButton";
 
 const History = ({ item, style, handleHistory }) => {
+  const [show, setShow] = useState(false);
+
+  const handleToggle = () => {
+    setShow(!show);
+  };
+
   return (
     <div>
-      <ul key={item.id}>
+      <ul>
         <li>
-          <p>
-            Operation: {item.inputs.a} {item.operator} {item.inputs.b}, Result:
-            {item.res}
-          </p>
-          <span>
-            {item.createdAt.toLocaleDateString()}
-            {"::"}
-            {item.createdAt.toLocaleTimeString()}
-          </span>
-          <br />
+          <div style={{ display: "flex", alignItems: "center", gap: "9px" }}>
+            <p>
+              Operation: {item.inputs.a} {item.operator} {item.inputs.b},
+              Result:
+              {item.res}
+            </p>
+            <CustomButton
+              text={show ? "Hide" : "Show"}
+              onClick={handleToggle}
+              style={appStyle}
+            />
+          </div>
+          {show && (
+            <div>
+              <span>
+                {item.createdAt.toLocaleDateString()}
+                {"::"}
+                {item.createdAt.toLocaleTimeString()}
+              </span>
+              <br />
 
-          <button className={style.btn} onClick={() => handleHistory(item)}>
-            Reset
-          </button>
+              <button className={style.btn} onClick={() => handleHistory(item)}>
+                Reset
+              </button>
+            </div>
+          )}
         </li>
       </ul>
     </div>
