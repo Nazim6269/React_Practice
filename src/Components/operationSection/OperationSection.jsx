@@ -46,7 +46,7 @@ const OperationSection = ({ handleClearOps, handleClick, style }) => {
   ];
   return (
     <div className={operationStyle.operationSection}>
-      <h2>Choose operation</h2>
+      <h2>Choose Operation:</h2>
       <div className={style.btnGroup}>
         {operations.map((item) => (
           <CustomButton

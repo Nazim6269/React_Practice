@@ -6,7 +6,7 @@ import NumberField from "../ui/NumberField";
 const InputSection = ({ inputState, handleInputChange }) => {
   return (
     <div className={inputStyle.inputSection}>
-      <h2>Enter inputs: </h2>
+      <h2>Enter Inputs: </h2>
       <NumberField
         type="number"
         name="a"
